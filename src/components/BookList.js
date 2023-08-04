@@ -1,5 +1,6 @@
-import React from 'react';
+// src/components/BookList.js
 import PropTypes from 'prop-types';
+import React from 'react';
 import IndividualBook from './IndividualBook';
 
 function BookList({ books, onDelete }) {
@@ -11,7 +12,7 @@ function BookList({ books, onDelete }) {
           id={book.id}
           title={book.title}
           author={book.author}
-          onDelete={onDelete}
+          onDelete={onDelete} // Make sure onDelete is a function that handles book deletion
         />
       ))}
     </div>
