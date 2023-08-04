@@ -7,7 +7,6 @@ function IndividualBook({ id, title, author }) {
   const dispatch = useDispatch();
 
   const handleDeleteBook = (bookId) => {
-    // Dispatch the removeBook action to remove the book from the state
     dispatch(removeBook(bookId));
   };
 
@@ -24,7 +23,6 @@ function IndividualBook({ id, title, author }) {
   );
 }
 
-// PropTypes validation for the IndividualBook component
 IndividualBook.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,

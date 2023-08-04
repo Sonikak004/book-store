@@ -1,4 +1,3 @@
-// src/components/BookList.js
 import PropTypes from 'prop-types';
 import React from 'react';
 import IndividualBook from './IndividualBook';
@@ -12,14 +11,13 @@ function BookList({ books, onDelete }) {
           id={book.id}
           title={book.title}
           author={book.author}
-          onDelete={onDelete} // Make sure onDelete is a function that handles book deletion
+          onDelete={onDelete}
         />
       ))}
     </div>
   );
 }
 
-// PropTypes validation for the BookList component
 BookList.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.shape({

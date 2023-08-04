@@ -1,4 +1,3 @@
-// src/components/HomePage.js
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import BookList from './BookList';
@@ -9,7 +8,6 @@ function HomePage() {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.books.books);
 
-  // Function to add a new book to the Redux state
   const handleAddBook = (newBook) => {
     dispatch(addBook(newBook));
   };
