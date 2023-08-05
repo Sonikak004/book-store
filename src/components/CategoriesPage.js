@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CategoriesPage() {
+export default function CategoriesPage() {
   return (
     <div>
       <h1>Categories</h1>
@@ -8,5 +8,3 @@ function CategoriesPage() {
     </div>
   );
 }
-
-export default CategoriesPage;
