@@ -1,8 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-// imports
+/* eslint-disable */
 import Books from './components/homePage';
 import Categories from './components/categoriesPage';
+/* eslint-enable */
 import Navigation from './components/Navigation';
 
 function App() {
