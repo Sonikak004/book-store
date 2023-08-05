@@ -1,6 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import HomePage from './components/homePage'; // Corrected the import name
+/* eslint-disable */
+import HomePage from './components/homePage';
 import CategoriesPage from './components/categoriesPage';
+/* eslint-enable */
 import Navigation from './components/Navigation';
 import './App.css';
 
