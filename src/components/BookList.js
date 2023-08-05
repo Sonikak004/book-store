@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import IndividualBook from './IndividualBook';
 
 function BookList({ books, onDelete }) {
@@ -18,7 +18,6 @@ function BookList({ books, onDelete }) {
   );
 }
 
-// PropTypes validation for the BookList component
 BookList.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.shape({

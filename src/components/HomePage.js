@@ -1,30 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import BookList from './BookList';
 import NewBookForm from './NewBookForm';
+import { addBook } from '../redux/books/booksSlice';
 
 function HomePage() {
-  // Sample book data for demonstration purposes
-  const [books, setBooks] = useState([
-    { id: 1, title: 'Book 1', author: 'Author 1' },
-    { id: 2, title: 'Book 2', author: 'Author 2' },
-    { id: 3, title: 'Book 3', author: 'Author 3' },
-  ]);
+  const dispatch = useDispatch();
+  const books = useSelector((state) => state.books.books);
 
-  // Function to add a new book to the book list
   const handleAddBook = (newBook) => {
-    setBooks([...books, { id: books.length + 1, title: newBook.title, author: newBook.author }]);
-  };
-
-  // Function to delete a book from the book list
-  const handleDeleteBook = (id) => {
-    setBooks((prevBooks) => prevBooks.filter((book) => book.id !== id));
+    dispatch(addBook(newBook));
   };
 
   return (
     <div>
       <h1>Welcome to the Book Store</h1>
       <h2>Book List</h2>
-      <BookList books={books} onDelete={handleDeleteBook} />
+      <BookList books={books} />
 
       <h2>Add a New Book</h2>
       <NewBookForm onAddBook={handleAddBook} />
