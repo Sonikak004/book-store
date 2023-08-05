@@ -5,12 +5,15 @@ import { addBook, removeBook } from '../redux/books/booksSlice';
 import Book from './book';
 
 function HomePage() {
+  // Local state for new book input fields
   const [newBookTitle, setNewBookTitle] = useState('');
   const [newBookAuthor, setNewBookAuthor] = useState('');
 
+  // Access books state from the Redux store
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
+  // Event handler for adding a new book
   const handleAddBook = () => {
     const newBook = {
       item_id: `item${books.length + 1}`,
@@ -23,6 +26,7 @@ function HomePage() {
     setNewBookAuthor('');
   };
 
+  // Event handler for removing a book
   const handleRemoveBook = (itemId) => {
     dispatch(removeBook(itemId));
   };
@@ -33,8 +37,10 @@ function HomePage() {
       <h2>Book List</h2>
       {books.map((book) => (
         <div key={book.item_id}>
+          {/* Display individual book details */}
           <Book title={book.title} author={book.author} category={book.category} />
-          <button type="submit" onClick={() => handleRemoveBook(book.item_id)}>
+          {/* Button to remove the book */}
+          <button type="button" onClick={() => handleRemoveBook(book.item_id)}>
             Remove
           </button>
         </div>
@@ -42,12 +48,24 @@ function HomePage() {
 
       <h2>Add a New Book</h2>
       <div>
-        <input type="text" value={newBookTitle} onChange={(e) => setNewBookTitle(e.target.value)} />
+        <input
+          type="text"
+          value={newBookTitle}
+          onChange={(e) => setNewBookTitle(e.target.value)}
+          placeholder="Title"
+        />
       </div>
       <div>
-        <input type="text" value={newBookAuthor} onChange={(e) => setNewBookAuthor(e.target.value)} />
+        <input
+          type="text"
+          value={newBookAuthor}
+          onChange={(e) => setNewBookAuthor(e.target.value)}
+          placeholder="Author"
+        />
       </div>
-      <button type="submit" onClick={handleAddBook}>Add Book</button>
+      <button type="button" onClick={handleAddBook}>
+        Add Book
+      </button>
     </div>
   );
 }
