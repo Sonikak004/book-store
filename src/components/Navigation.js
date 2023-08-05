@@ -1,17 +1,21 @@
 import { NavLink } from 'react-router-dom';
+import { FaUserShield } from 'react-icons/fa';
 
 export default function Navigation() {
   return (
-    <nav>
-      <h1>Bookstore</h1>
-      <ul>
+    <nav className="navigation row">
+      <h1 className="Text-Style-3 head">Bookstore CMS</h1>
+      <ul className="row">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink className="link Text-Style-6" to="/">Books</NavLink>
         </li>
         <li>
-          <NavLink to="/categories">Categories</NavLink>
+          <NavLink className="link Text-Style-6" to="/categories">Categories</NavLink>
         </li>
       </ul>
+      <span id="userIcon">
+        <FaUserShield />
+      </span>
     </nav>
   );
 }

@@ -41,29 +41,36 @@ const NewBookForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <input
-          type="text"
-          id="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Title"
-        />
-        {titleError && <p>{titleError}</p>}
-      </div>
-      <div>
-        <input
-          type="text"
-          id="author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-          placeholder="Author"
-        />
-        {authorError && <p>{authorError}</p>}
-      </div>
-      <button type="submit">Add Book</button>
-    </form>
+    <section id="bookForm" className="Text-Style-12 column">
+      <span className="Title Title Text-Style-12">ADD NEW BOOK</span>
+      <form className="input-div" onSubmit={handleSubmit}>
+        <div className="title-div">
+          <input
+            type="text"
+            name="title"
+            id="titleInput"
+            value={title}
+            className="Text-Style-13"
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Title"
+          />
+          {titleError && <p>{titleError}</p>}
+        </div>
+        <div className="author-div">
+          <input
+            type="text"
+            name="author"
+            id="titleInput"
+            value={author}
+            className="Text-Style-13"
+            onChange={(e) => setAuthor(e.target.value)}
+            placeholder="Author"
+          />
+          {authorError && <p>{authorError}</p>}
+        </div>
+        <button id="submit" type="submit">Add Book</button>
+      </form>
+    </section>
   );
 };
 
