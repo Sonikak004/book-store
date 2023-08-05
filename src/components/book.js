@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Book({ title, author, category }) {
   return (
     <div>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <p>
         Author:
         {' '}
@@ -19,6 +19,7 @@ function Book({ title, author, category }) {
   );
 }
 
+// PropTypes validation for the Book component
 Book.propTypes = {
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
