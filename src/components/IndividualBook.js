@@ -1,32 +1,35 @@
-import React from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
 
-function IndividualBook({ id, title, author }) {
-  const dispatch = useDispatch();
-
-  const handleDeleteBook = (bookId) => {
-    dispatch(removeBook(bookId));
-  };
-
-  return (
-    <div>
-      <h2>{title}</h2>
-      <p>
-        Author:
-        {' '}
-        {author}
-      </p>
-      <button type="button" onClick={() => handleDeleteBook(id)}>Delete</button>
-    </div>
-  );
-}
-
-IndividualBook.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+const initialState = {
+  bookCollection: null,
 };
 
-export default IndividualBook;
+const bookReducer = (state, action) => {
+  switch (action.type) {
+    case 'SET_BOOK_COLLECTION':
+      return { ...state, bookCollection: action.payload };
+    default:
+      return state;
+  }
+};
+
+const BookContext = createContext();
+
+export const useBookContext = () => useContext(BookContext);
+
+const BookProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(bookReducer, initialState);
+
+  return (
+    <BookContext.Provider value={{ bookCollection: state.bookCollection, setBookCollection: (collection) => dispatch({ type: 'SET_BOOK_COLLECTION', payload: collection }) }}>
+      {children}
+    </BookContext.Provider>
+  );
+};
+
+BookProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default BookProvider;
