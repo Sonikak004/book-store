@@ -7,11 +7,13 @@ function NewBookForm({ onAddBook }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title.trim() && author.trim()) {
-      onAddBook({ title, author });
-      setTitle('');
-      setAuthor('');
-    }
+    const newBook = {
+      title,
+      author,
+    };
+    onAddBook(newBook);
+    setTitle('');
+    setAuthor('');
   };
 
   return (
@@ -22,6 +24,7 @@ function NewBookForm({ onAddBook }) {
       <div>
         <input type="text" id="author" value={author} onChange={(e) => setAuthor(e.target.value)} />
       </div>
+
       <button type="submit">Add Book</button>
     </form>
   );
