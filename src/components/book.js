@@ -19,7 +19,6 @@ function Book({ title, author, category }) {
   );
 }
 
-// PropTypes validation for the Book component
 Book.propTypes = {
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
