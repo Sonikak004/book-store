@@ -1,30 +1,18 @@
-// src/App.js
-import React from 'react';
-import {
-  BrowserRouter as Router, Routes, Route, Link,
-} from 'react-router-dom';
-import HomePage from './components/HomePage';
-import CategoriesPage from './components/CategoriesPage';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Books from './components/homePage';
+import Categories from './components/categoriesPage';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
-    <Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/categories">Categories</Link>
-          </li>
-        </ul>
-      </nav>
-
+    <>
+      <Navigation />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/categories" element={<CategoriesPage />} />
+        <Route path="/" element={<Books />} />
+        <Route path="/categories" element={<Categories />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
