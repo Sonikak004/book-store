@@ -5,15 +5,12 @@ import { addBook, removeBook } from '../redux/books/booksSlice';
 import Book from './book';
 
 function HomePage() {
-  // Local state for new book input fields
   const [newBookTitle, setNewBookTitle] = useState('');
   const [newBookAuthor, setNewBookAuthor] = useState('');
 
-  // Access books state from the Redux store
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
-  // Event handler for adding a new book
   const handleAddBook = () => {
     const newBook = {
       item_id: `item${books.length + 1}`,
