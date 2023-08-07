@@ -11,7 +11,7 @@ function Book({ title, author, id }) {
       <div>
         <div className="column">
           <span className="Text-Style-9 categories">Book</span>
-          <span className="Text-Style-5"><h2>{title}</h2></span>
+          <span className="Text-Style-5"><h2 className="title-text">{title}</h2></span>
           <span className="Text-Style-8 author">{author}</span>
         </div>
         <div className="button-div">
