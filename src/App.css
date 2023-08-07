@@ -64,8 +64,11 @@
 }
 
 .button-div {
+  display: flex;
   position: relative;
-  top: 15px;
+  top: 10px;
+  flex-direction: row;
+  width: 10px;
 }
 
 .button-div button {
@@ -95,6 +98,8 @@
   gap: 0.688rem;
   align-items: center;
   justify-content: center;
+  left: 112px;
+  position: relative;
 }
 
 .progres {
@@ -107,6 +112,10 @@
   padding-right: 4.938rem;
   border-right: solid 1px #e8e8e8;
   margin-right: 3.688rem;
+}
+
+.column > h2 {
+  width: 187%;
 }
 
 .form {
