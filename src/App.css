@@ -1,39 +1,212 @@
-.App {
-  text-align: center;
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.column {
   display: flex;
   flex-direction: column;
+}
+
+.navbar {
+  align-items: center;
+  gap: 2.375rem;
+  height: 5.938rem;
+  margin: 0 0 2.375rem;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+  background-color: #fff;
+  border-bottom: solid 1px #e8e8e8;
+}
+
+.navibar > ul {
+  gap: 2.563rem;
+  padding: 0;
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.link {
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  color: #121212;
+  text-decoration: none;
+  opacity: 0.5;
+  padding-left: 15px;
+}
+
+.active {
+  opacity: 1;
+}
+
+.userbadge {
+  border: solid 1px #e8e8e8;
+  margin-left: auto;
+  padding: 0.875rem;
+  border-radius: 50%;
+}
+
+.userbadge svg {
+  width: 1.7rem;
+  height: 1.7rem;
+  color: #0290ff;
+}
+
+.books {
+  justify-content: space-between;
+  align-items: center;
+  height: 10.625rem;
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+}
+
+.button-div {
+  position: relative;
+  top: 15px;
+}
+
+.button-div button {
+  border: none;
+  background: none;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  margin-left: -6px;
+}
+
+.progressbut {
+  width: 11.5rem;
+  height: 2.063rem;
+  margin-top: 1.438rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border: none;
+  border-radius: 3px;
+  background-color: #0290ff;
+  color: #fff;
+}
+
+.buttons button:nth-child(-n + 2) {
+  border-right: solid 1px #e8e8e8;
+  padding-right: 0.938rem;
+}
+
+.progress-circle {
+  gap: 0.688rem;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.progres {
+  width: 4.7rem;
+  height: 4.7rem;
+  padding: 0.62rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.numbers {
+  padding-right: 4.938rem;
+  border-right: solid 1px #e8e8e8;
+  margin-right: 3.688rem;
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.form {
+  max-width: 92rem;
+  margin: 2.5rem auto 0;
+  padding: 1.813rem 0 1.625rem 0;
+  border-top: solid 1px #e8e8e8;
+  gap: 1.188rem;
+}
+
+#form {
+  gap: 2.125rem;
+}
+
+#Input1,
+#Input2 {
+  padding: 0 0 0 1.063rem;
+  width: 60%;
+  height: 2.813rem;
+  border-radius: 4px;
+  border: solid 1px var(--white-three);
+  background-color: var(--white-two);
+  outline: none;
+}
+
+.submitbut {
+  width: 11.5rem;
+  height: 3rem;
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #0290ff;
+  border: none;
+}
+
+.author,
+.butsub-text {
+  font-size: 0.875rem;
+  color: #4386bf;
+}
+
+.Title {
+  margin: 1.813rem 32.75rem 1.188rem 0;
+  font-size: 1.25rem;
+  margin-left: 25px;
+  font-weight: bold;
+  color: #888;
+}
+
+.input-div {
+  display: flex;
+  justify-content: center;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.title-div {
+  width: 41.5rem;
+}
+
+.author-div {
+  width: 17.813rem;
+}
+
+.categories {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #121212;
+}
+
+.cat-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.head {
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+}
+
+input::placeholder {
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: #c4c4c4;
+}
+
+.error {
+  color: rgb(253, 0, 0);
+  font-size: 18px;
 }

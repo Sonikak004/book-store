@@ -19,12 +19,12 @@ const NewBookForm = () => {
 
     // Check if any input field is empty
     if (!title) {
-      setTitleError('Title is required');
+      setTitleError('*Title is required');
       return;
     }
 
     if (!author) {
-      setAuthorError('Author is required');
+      setAuthorError('*Author is required');
       return;
     }
 
@@ -41,29 +41,36 @@ const NewBookForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <input
-          type="text"
-          id="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Title"
-        />
-        {titleError && <p>{titleError}</p>}
-      </div>
-      <div>
-        <input
-          type="text"
-          id="author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-          placeholder="Author"
-        />
-        {authorError && <p>{authorError}</p>}
-      </div>
-      <button type="submit">Add Book</button>
-    </form>
+    <main className="form Text-Style-12 column">
+      <span className="Title Text-Style-12">ADD NEW BOOK</span>
+      <form className="input-div" onSubmit={handleSubmit}>
+        <div className="title-div">
+          <input
+            type="text"
+            name="title"
+            id="Input1"
+            value={title}
+            className="Text-Style-13"
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Title"
+          />
+          {titleError && <p className="error">{titleError}</p>}
+        </div>
+        <div className="author-div">
+          <input
+            type="text"
+            name="author"
+            id="Input2"
+            value={author}
+            className="Text-Style-13"
+            onChange={(e) => setAuthor(e.target.value)}
+            placeholder="Author"
+          />
+          {authorError && <p className="error">{authorError}</p>}
+        </div>
+        <button className="submitbut" type="submit">Add Book</button>
+      </form>
+    </main>
   );
 };
 
