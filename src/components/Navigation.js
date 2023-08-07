@@ -3,7 +3,7 @@ import { FaUserShield } from 'react-icons/fa';
 
 export default function Navigation() {
   return (
-    <nav className="navigation row">
+    <nav className="navbar row">
       <h1 className="Text-Style-3 head">Bookstore CMS</h1>
       <ul className="row">
         <li>
@@ -13,7 +13,7 @@ export default function Navigation() {
           <NavLink className="link Text-Style-6" to="/categories">Categories</NavLink>
         </li>
       </ul>
-      <span id="userIcon">
+      <span className="userbadge">
         <FaUserShield />
       </span>
     </nav>

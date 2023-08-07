@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 
-.navigation {
+.navbar {
   align-items: center;
   gap: 2.375rem;
   height: 5.938rem;
@@ -18,72 +18,64 @@
   border-bottom: solid 1px #e8e8e8;
 }
 
-.navigation > ul {
+.navibar > ul {
   gap: 2.563rem;
   padding: 0;
 }
 
-.navigation li {
+.navbar li {
   list-style: none;
 }
 
 .link {
   font-size: 0.813rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: 1.9px;
   color: #121212;
   text-decoration: none;
   opacity: 0.5;
-}
-
-.pale {
-  text-decoration: none;
-  opacity: 0.5;
+  padding-left: 15px;
 }
 
 .active {
   opacity: 1;
 }
 
-#userIcon {
+.userbadge {
   border: solid 1px #e8e8e8;
   margin-left: auto;
   padding: 0.875rem;
   border-radius: 50%;
 }
 
-#userIcon svg {
+.userbadge svg {
   width: 1.7rem;
   height: 1.7rem;
   color: #0290ff;
 }
 
-.bookCard {
+.books {
   justify-content: space-between;
   align-items: center;
   height: 10.625rem;
-  max-width: 81rem;
-  margin: 2.313rem auto 0;
   padding: 2rem 9.188rem 1.625rem 1.688rem;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: #fff;
 }
 
-.bookDetails {
-  margin: 2rem 0 1.313rem;
+.button-div {
+  position: relative;
+  top: 15px;
 }
 
-.buttons button {
+.button-div button {
   border: none;
   background: none;
   margin: 0.188rem 0.938rem 0.125rem 0;
+  margin-left: -6px;
 }
 
-.overview button {
+.progressbut {
   width: 11.5rem;
   height: 2.063rem;
   margin-top: 1.438rem;
@@ -99,9 +91,10 @@
   padding-right: 0.938rem;
 }
 
-.stats {
+.progress-circle {
   gap: 0.688rem;
   align-items: center;
+  justify-content: center;
 }
 
 .progres {
@@ -116,7 +109,7 @@
   margin-right: 3.688rem;
 }
 
-#bookForm {
+.form {
   max-width: 92rem;
   margin: 2.5rem auto 0;
   padding: 1.813rem 0 1.625rem 0;
@@ -128,7 +121,8 @@
   gap: 2.125rem;
 }
 
-#titleInput {
+#Input1,
+#Input2 {
   padding: 0 0 0 1.063rem;
   width: 60%;
   height: 2.813rem;
@@ -138,17 +132,7 @@
   outline: none;
 }
 
-#authorInput {
-  padding: 0 0 0 1.063rem;
-  width: 20%;
-  height: 2.813rem;
-  border-radius: 4px;
-  border: solid 1px var(--white-three);
-  background-color: var(--white-two);
-  outline: none;
-}
-
-#submit {
+.submitbut {
   width: 11.5rem;
   height: 3rem;
   padding: 0.801rem 1.188rem 0.886rem 1.375rem;
@@ -159,27 +143,16 @@
 }
 
 .author,
-.blue-text {
+.butsub-text {
   font-size: 0.875rem;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #4386bf;
 }
 
 .Title {
-  width: 10.875rem;
-  height: 1.5rem;
   margin: 1.813rem 32.75rem 1.188rem 0;
   font-size: 1.25rem;
   margin-left: 25px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: -0.18px;
   color: #888;
 }
 
@@ -198,13 +171,9 @@
   width: 17.813rem;
 }
 
-.category {
+.categories {
   font-size: 0.875rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #121212;
 }
 
@@ -235,4 +204,9 @@ input::placeholder {
   line-height: normal;
   letter-spacing: -0.15px;
   color: #c4c4c4;
+}
+
+.error {
+  color: rgb(253, 0, 0);
+  font-size: 18px;
 }
